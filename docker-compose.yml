@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    container_name: audio-upload-api
+    ports:
+      - "8000:8000"
+    environment:
+      - UPLOAD_DIR=/data/uploads
+      - MAX_UPLOAD_BYTES=52428800   # 50MB
+      - ALLOWED_EXTENSIONS=wav,mp3,m4a,ogg,webm
+    volumes:
+      - ./data/uploads:/data/uploads
