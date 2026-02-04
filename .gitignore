@@ -12,3 +12,4 @@ data/uploads/
 # Env
 .env
 .venv
+env
