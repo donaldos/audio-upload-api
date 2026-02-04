@@ -24,9 +24,10 @@ jobs:
 
       - name: Lint
         run: ruff check .
-
+      - name: Install project
+        run: pip install -e .  
       - name: Test
-        run: PYTHONPATH=. pytest -q
+        run: pytest -q
         
   docker-build:
     runs-on: ubuntu-latest
